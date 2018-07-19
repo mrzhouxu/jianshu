@@ -28,3 +28,12 @@ class ArticleItem(scrapy.Item):
     content = scrapy.Field()
     time = scrapy.Field()
     in_time = scrapy.Field()
+
+class CommentItem(scrapy.Item):
+    # define the fields for your item here like:
+    content = scrapy.Field()
+    time = scrapy.Field()
+    id = scrapy.Field()
+    article = scrapy.Field()
+    user_slug = scrapy.Field()
+    title = scrapy.Field()

@@ -112,9 +112,9 @@ class Article(scrapy.Spider):
             ytd_star = int(time.mktime(time.strptime(str(datetime.date.today() - datetime.timedelta(days=1)), '%Y-%m-%d'))) #昨天0.00
             ytd_end = int(time.mktime(time.strptime(str(datetime.date.today()), '%Y-%m-%d'))) - 1                           #昨天23.59
             
-            # if( ytd_star <= item['time'] and item['time'] <= ytd_end ):
+            if( ytd_star <= item['time'] and item['time'] <= ytd_end ):
                 #print("昨天")
-            yield item
+                yield item
             # else:
                 #print("不是昨天")
                 # pass
