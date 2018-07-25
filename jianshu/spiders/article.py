@@ -33,7 +33,7 @@ class Article(scrapy.Spider):
     }
     db = pymysql.connect( settings.MYSQL_HOST,settings.MYSQL_USER,settings.MYSQL_PASSWORD,settings.MYSQL_DBNAME,charset='utf8mb4' )
     cursor = db.cursor()
-    sql = "select id,name,url from user where del = 0"
+    sql = "select id,name,url from user where 'delete' = 0"
     try:
         cursor.execute(sql)
         results = cursor.fetchall()
